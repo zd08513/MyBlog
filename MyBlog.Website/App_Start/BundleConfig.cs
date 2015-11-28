@@ -27,14 +27,17 @@ namespace MyBlog.Website
             //          "~/Content/bootstrap.css",
             //          "~/Content/site.css"));
 
-            bundles.Add(new StyleBundle("~/B-JUI/BJUI/themes/default").Include(
-                "~/B-JUI/BJUI/themes/default/core.css"
+            bundles.Add(new StyleBundle("~/BJUI/themes/default").Include(
+                "~/BJUI/themes/default/core.css"
                 ));
 
-            bundles.Add(new ScriptBundle("~/B-JUI/BJUI/js").Include(
-                    "~/B-JUI/BJUI/js/jquery-1.7.2.min.js",
-                    "~/B-JUI/BJUI/js/jquery.cookie.js",
-                    "~/B-JUI/BJUI/js/bjui-all.js"
+            bundles.Add(new ScriptBundle("~/BJUI/jq").Include(
+                    "~/BJUI/js/jquery-1.7.2.min.js",
+                    "~/BJUI/js/jquery.cookie.js"
+                ));
+
+            bundles.Add(new ScriptBundle("~/BJUI/js").Include(
+                    "~/BJUI/js/bjui-all.js"
                 ));
         }
     }

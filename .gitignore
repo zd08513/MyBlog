@@ -9,3 +9,5 @@ MyBlog.IBiz/obj
 MyBlog.Website/bin
 MyBlog.Website/obj
 packages
+MyBlog.Models/obj
+MyBlog.Models/bin

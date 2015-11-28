@@ -5,15 +5,29 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewBag.Title</title>
-    @Styles.Render("~/B-JUI/BJUI/themes/default")
+    <!-- bootstrap - css -->
+    <link href="BJUI/themes/css/bootstrap.css" rel="stylesheet">
+    <link href="~/BJUI/themes/css/style.css" rel="stylesheet" />
+    @Styles.Render("~/BJUI/themes/default")
+    <!-- plug - css -->
+    <link href="~/BJUI/plugins/kindeditor_4.1.10/themes/default/default.css" rel="stylesheet">
+    <link href="~/BJUI/plugins/colorpicker/css/bootstrap-colorpicker.min.css" rel="stylesheet">
+    <link href="~/BJUI/plugins/niceValidator/jquery.validator.css" rel="stylesheet">
+    <link href="~/BJUI/plugins/bootstrapSelect/bootstrap-select.css" rel="stylesheet">
+    <link href="~/BJUI/themes/css/FA/css/font-awesome.min.css" rel="stylesheet">
+    <!--[if lte IE 7]>
+    <link href="~/BJUI/themes/css/ie7.css" rel="stylesheet">
+    <![endif]-->
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lte IE 9]>
+        <script src="~/BJUI/other/html5shiv.min.js"></script>
+        <script src="~/BJUI/other/respond.min.js"></script>
+    <![endif]-->
 </head>
 <body>
     <header id="bjui-header">
         <!-- logo --><!-- 快捷菜单(消息、用户信息、切换皮肤) -->
-        <div id="bjui-hnav">
-            <!-- 横向菜单 -->
-            @Html.Partial("_HeaderPage")
-        </div>
+        @Html.Partial("_HeaderPage")
     </header>
     <div id="bjui-container" class="clearfix">
         <div id="bjui-leftside">
@@ -29,7 +43,11 @@
         <!-- 页脚 -->
         @Html.Partial("_FooterPage")
     </footer>
-    @Scripts.Render("~/B-JUI/BJUI/js")
+    @Scripts.Render("~/BJUI/jq")
+    <!--[if lte IE 9]>
+    <script src="~/BJUI/other/jquery.iframe-transport.js"></script>
+    <![endif]-->
+    @Scripts.Render("~/BJUI/js")
     @RenderSection("scripts",false)
 </body>
 </html>
