@@ -5,8 +5,31 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewBag.Title</title>
+    @Styles.Render("~/B-JUI/BJUI/themes/default")
 </head>
 <body>
-    
+    <header id="bjui-header">
+        <!-- logo --><!-- 快捷菜单(消息、用户信息、切换皮肤) -->
+        <div id="bjui-hnav">
+            <!-- 横向菜单 -->
+            @Html.Partial("_HeaderPage")
+        </div>
+    </header>
+    <div id="bjui-container" class="clearfix">
+        <div id="bjui-leftside">
+            <!-- 导航栏 -->
+            @Html.Partial("_NavPage")
+        </div>
+        <div id="bjui-navtab" class="tabsPage">
+            <!-- 工作区(navtab) -->
+            @RenderBody()
+        </div>
+    </div>
+    <footer id="bjui-footer">
+        <!-- 页脚 -->
+        @Html.Partial("_FooterPage")
+    </footer>
+    @Scripts.Render("~/B-JUI/BJUI/js")
+    @RenderSection("scripts",false)
 </body>
 </html>
