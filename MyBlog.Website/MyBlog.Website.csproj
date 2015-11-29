@@ -514,6 +514,7 @@
     <Content Include="BJUI\themes\purple\purple.png" />
     <Content Include="BJUI\themes\purple\topbg.png" />
     <Content Include="BJUI\themes\purple\zTreeStandard.png" />
+    <Content Include="Content\css\login\login.css" />
     <Content Include="Content\images\001.jpg" />
     <Content Include="Content\images\002.jpg" />
     <Content Include="Content\images\003.jpg" />
@@ -547,6 +548,22 @@
     <Content Include="Content\js\init.js" />
     <Content Include="Content\js\login\login.js" />
     <Content Include="Content\js\navpage.js" />
+    <Content Include="Content\sha256.js" />
+    <Content Include="Content\syntaxhighlighter-2.1.382\scripts\brush.js" />
+    <Content Include="Content\syntaxhighlighter-2.1.382\scripts\clipboard.swf" />
+    <Content Include="Content\syntaxhighlighter-2.1.382\styles\help.png" />
+    <Content Include="Content\syntaxhighlighter-2.1.382\styles\magnifier.png" />
+    <Content Include="Content\syntaxhighlighter-2.1.382\styles\page_white_code.png" />
+    <Content Include="Content\syntaxhighlighter-2.1.382\styles\page_white_copy.png" />
+    <Content Include="Content\syntaxhighlighter-2.1.382\styles\printer.png" />
+    <Content Include="Content\syntaxhighlighter-2.1.382\styles\shCore.css" />
+    <Content Include="Content\syntaxhighlighter-2.1.382\styles\shThemeDefault.css" />
+    <Content Include="Content\syntaxhighlighter-2.1.382\styles\shThemeDjango.css" />
+    <Content Include="Content\syntaxhighlighter-2.1.382\styles\shThemeEclipse.css" />
+    <Content Include="Content\syntaxhighlighter-2.1.382\styles\shThemeEmacs.css" />
+    <Content Include="Content\syntaxhighlighter-2.1.382\styles\shThemeFadeToGrey.css" />
+    <Content Include="Content\syntaxhighlighter-2.1.382\styles\shThemeMidnight.css" />
+    <Content Include="Content\syntaxhighlighter-2.1.382\styles\shThemeRDark.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -592,8 +609,8 @@
     <Content Include="Views\Shared\TempChildPage.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Login\Register.cshtml" />
-    <Content Include="Views\Login\Login.cshtml" />
     <Content Include="Views\Home\Workbench.cshtml" />
+    <Content Include="Views\Login\Login.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\MyBlog.Biz\MyBlog.Biz.csproj">

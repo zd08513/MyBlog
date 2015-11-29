@@ -2,7 +2,7 @@
     BJUI.init({
         JSPATH: 'BJUI/',         //[可选]框架路径
         PLUGINPATH: 'BJUI/plugins/', //[可选]插件路径
-        loginInfo: { url: 'login_timeout.html', title: '登录', width: 400, height: 200 }, // 会话超时后弹出登录对话框
+        loginInfo: { url: '/login/login', title: '登录', width: 400, height: 200 }, // 会话超时后弹出登录对话框
         statusCode: { ok: 200, error: 300, timeout: 301 }, //[可选]
         ajaxTimeout: 50000, //[可选]全局Ajax请求超时时间(毫秒)
         pageInfo: { total: 'total', pageCurrent: 'pageCurrent', pageSize: 'pageSize', orderField: 'orderField', orderDirection: 'orderDirection' }, //[可选]分页参数

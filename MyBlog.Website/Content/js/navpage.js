@@ -1,6 +1,5 @@
 ﻿//菜单-事件
 function MainMenuClick(event, treeId, treeNode) {
-    alert('asdf');
     event.preventDefault()
 
     if (treeNode.isParent) {

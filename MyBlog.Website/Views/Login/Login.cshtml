@@ -1,8 +1,67 @@
-﻿
-@{
-    ViewBag.Title = "Login";
-    Layout = "~/Views/Shared/_Layout.cshtml";
+﻿@{
+    Layout = null;
 }
-
-<h2>Login</h2>
-
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>系统登录</title>
+    <link href="~/BJUI/themes/css/bootstrap.min.css" rel="stylesheet">
+    <link href="~/Content/css/login/login.css" rel="stylesheet" />
+</head>
+<body>
+    <!--[if lte IE 7]>
+    <style type="text/css">
+    #errorie {position: fixed; top: 0; z-index: 100000; height: 30px; background: #FCF8E3;}
+    #errorie div {width: 900px; margin: 0 auto; line-height: 30px; color: orange; font-size: 14px; text-align: center;}
+    #errorie div a {color: #459f79;font-size: 14px;}
+    #errorie div a:hover {text-decoration: underline;}
+    </style>
+    <div id="errorie"><div>您还在使用老掉牙的IE，请升级您的浏览器到 IE8以上版本 <a target="_blank" href="http://windows.microsoft.com/zh-cn/internet-explorer/ie-8-worldwide-languages">点击升级</a>&nbsp;&nbsp;强烈建议您更改换浏览器：<a href="http://down.tech.sina.com.cn/content/40975.html" target="_blank">谷歌 Chrome</a></div></div>
+    <![endif]-->
+    <div class="main_box">
+        <div class="setting"><a href="javascript:;" onclick="choose_bg();" title="更换背景"><span class="glyphicon glyphicon-th-large"></span></a></div>
+        <div class="login_box">
+            <div class="login_logo">
+                <img src="@Url.Content("~/Content/images/logo.png")">
+            </div>
+            <!--
+            <c:if test="${!empty message}">
+                <div class="login_msg">
+                    <font color="red">${message }</font>
+                </div>
+            </c:if>
+            -->
+            <div class="login_form">
+                <input type="hidden" value="${randomKey }" id="j_randomKey" />
+                <form action="index.html" id="login_form" method="post">
+                    <input type="hidden" name="jfinal_token" value="${jfinal_token }" />
+                    <div class="form-group">
+                        <label for="j_username" class="t">用户名：</label> <input id="j_username" value="" name="username" type="text" class="form-control x319 in" autocomplete="off">
+                    </div>
+                    <div class="form-group">
+                        <label for="j_password" class="t">密　码：</label> <input id="j_password" value="" name="passwordhash" type="password" class="form-control x319 in">
+                    </div>
+                    <div class="form-group">
+                        <label for="j_captcha" class="t">验证码：</label> <input id="j_captcha" name="j_captcha" type="text" class="form-control x164 in">
+                        <img id="captcha_img" alt="点击更换" title="点击更换" src="@Url.Action("../Content/images/captcha.jpeg")" class="m">
+                    </div>
+                    <div class="form-group">
+                        <label class="t"></label>
+                        <label for="j_remember" class="m"><input id="j_remember" type="checkbox" value="true">&nbsp;记住登陆账号!</label>
+                    </div>
+                    <div class="form-group space">
+                        <label class="t"></label>
+                        <input type="submit" id="login_ok" value="&nbsp;登&nbsp;录&nbsp;" class="btn btn-primary btn-lg">&nbsp;&nbsp;&nbsp;&nbsp;
+                        <input type="reset" value="&nbsp;重&nbsp;置&nbsp;" class="btn btn-default btn-lg">
+                    </div>
+                </form>
+            </div>
+        </div>
+        @Html.Partial("_FooterPage")
+    </div>
+    @Scripts.Render("~/BJUI/jq")
+    <script src="~/Content/sha256.js"></script>
+    <script src="~/Content/js/login/login.js"></script>
+</body>
+</html>
