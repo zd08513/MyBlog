@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MyBlog.Models
+namespace MyBlog.Entity.Models
 {
     /// <summary>
     /// 登录类

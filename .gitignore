@@ -12,3 +12,4 @@ packages
 MyBlog.Models/obj
 MyBlog.Models/bin
 MyBlog.private.ppk
+*.pfx
