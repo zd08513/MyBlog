@@ -32,8 +32,8 @@ namespace MyBlog.Website
                 ));
 
             bundles.Add(new ScriptBundle("~/BJUI/jq").Include(
-                    "~/BJUI/js/jquery-1.7.2.min.js",
-                    "~/BJUI/js/jquery.cookie.js"
+                    "~/BJUI/jq/jquery-1.7.2.min.js",
+                    "~/BJUI/jq/jquery.cookie.js"
                 ));
 
             bundles.Add(new ScriptBundle("~/BJUI/js").Include(

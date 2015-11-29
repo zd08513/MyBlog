@@ -544,7 +544,9 @@
     <Content Include="Content\images\logo.jpg" />
     <Content Include="Content\images\logo.png" />
     <Content Include="Content\images\logo_bootstrap.png" />
+    <Content Include="Content\js\init.js" />
     <Content Include="Content\js\login\login.js" />
+    <Content Include="Content\js\navpage.js" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -563,7 +565,6 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Models\" />
-    <Folder Include="Views\Login\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
@@ -590,6 +591,9 @@
     <Content Include="Views\Shared\_NavPage.cshtml" />
     <Content Include="Views\Shared\TempChildPage.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Login\Register.cshtml" />
+    <Content Include="Views\Login\Login.cshtml" />
+    <Content Include="Views\Home\Workbench.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\MyBlog.Biz\MyBlog.Biz.csproj">

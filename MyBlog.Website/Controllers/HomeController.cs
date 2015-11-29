@@ -13,5 +13,10 @@ namespace MyBlog.Website.Controllers
         {
             return View();
         }
+        //我的工作台
+        public ActionResult Workbench()
+        {
+            return View();
+        }
     }
 }
