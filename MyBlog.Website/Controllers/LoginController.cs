@@ -29,6 +29,10 @@ namespace MyBlog.Website.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Login(LoginModel model)
         {
+#if DEBUG
+            UserInfoExtensions.SetUserInfo(new UserInfo { UserName="admin",UserId="1",CreateTime=DateTime.Now});
+            return RedirectToAction("index", "home");
+#endif
             if (model.ImageCode == Functions.ToConvert<string>(Session["code"]))
             {
                 ModelState.AddModelError("LoginErrorMessage", "验证码有误！");
