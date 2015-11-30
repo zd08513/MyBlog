@@ -29,6 +29,12 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>myblog.pfx</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -39,7 +45,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CompanieBiz.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SalaryInfoBiz.cs" />
+    <Compile Include="UserInfoBiz.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\Tools\Tools\Tools.csproj">
@@ -58,6 +67,9 @@
       <Project>{ac133e11-d70c-4507-87bc-80f40acdadc0}</Project>
       <Name>MyBlog.IBiz</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="myblog.pfx" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

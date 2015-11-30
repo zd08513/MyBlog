@@ -39,13 +39,14 @@ $(function () {
         window.location.href = 'index.html'; /*注意：生产环境时请删除此行*/
         return false;
     });
+    $('#captcha_img').click(changeCode);
 });
 function genTimestamp() {
     var time = new Date();
     return time.getTime();
 }
 function changeCode() {
-    //$("#captcha_img").attr("src", "/captcha.jpeg?t="+genTimestamp());
+    $("#captcha_img").attr("src", "/verifycode/index?t="+genTimestamp());
 }
 function choose_bg() {
     var bg = Math.floor(Math.random() * 9 + 1);

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MyBlog.Website.App_Start;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -16,6 +17,9 @@ namespace MyBlog.Website
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
+
+            //注入接口
+            InterfaceConfig.Register();
         }
     }
 }

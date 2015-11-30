@@ -40,6 +40,10 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Ninject, Version=3.2.0.0, Culture=neutral, PublicKeyToken=c7192dc5380945e7, processorArchitecture=MSIL">
+      <HintPath>..\packages\Ninject.3.2.2.0\lib\net45-full\Ninject.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
@@ -110,12 +114,18 @@
   <ItemGroup>
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\InterfaceConfig.cs" />
+    <Compile Include="App_Start\NinjectDependencyResolver.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\BaseController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
+    <Compile Include="Controllers\VerifyCodeController.cs" />
+    <Compile Include="Extensions\UserInfoExtensions.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="MyFilter\UserFilter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -515,6 +525,7 @@
     <Content Include="BJUI\themes\purple\topbg.png" />
     <Content Include="BJUI\themes\purple\zTreeStandard.png" />
     <Content Include="Content\css\login\login.css" />
+    <Content Include="Content\home.png" />
     <Content Include="Content\images\001.jpg" />
     <Content Include="Content\images\002.jpg" />
     <Content Include="Content\images\003.jpg" />
@@ -564,7 +575,6 @@
     <Content Include="Content\syntaxhighlighter-2.1.382\styles\shThemeFadeToGrey.css" />
     <Content Include="Content\syntaxhighlighter-2.1.382\styles\shThemeMidnight.css" />
     <Content Include="Content\syntaxhighlighter-2.1.382\styles\shThemeRDark.css" />
-    <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Web.config" />
@@ -582,6 +592,7 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Models\" />
+    <Folder Include="Views\Base\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
@@ -614,6 +625,10 @@
     <Content Include="Views\Login\Login.cshtml" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\Tools\Tools\Tools.csproj">
+      <Project>{34a05066-dab0-4c09-ba3c-e408b0a9f367}</Project>
+      <Name>Tools</Name>
+    </ProjectReference>
     <ProjectReference Include="..\MyBlog.Biz\MyBlog.Biz.csproj">
       <Project>{ce7aa2dd-57aa-48e2-aff1-1f6e80bed463}</Project>
       <Name>MyBlog.Biz</Name>
