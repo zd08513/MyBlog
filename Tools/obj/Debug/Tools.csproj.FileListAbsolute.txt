@@ -1,0 +1,4 @@
+E:\Project\vs2013\MyBlog\Tools\bin\Debug\Tools.dll
+E:\Project\vs2013\MyBlog\Tools\bin\Debug\Tools.pdb
+E:\Project\vs2013\MyBlog\Tools\obj\Debug\Tools.dll
+E:\Project\vs2013\MyBlog\Tools\obj\Debug\Tools.pdb

@@ -625,10 +625,6 @@
     <Content Include="Views\Login\Login.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\Tools\Tools\Tools.csproj">
-      <Project>{34a05066-dab0-4c09-ba3c-e408b0a9f367}</Project>
-      <Name>Tools</Name>
-    </ProjectReference>
     <ProjectReference Include="..\MyBlog.Biz\MyBlog.Biz.csproj">
       <Project>{ce7aa2dd-57aa-48e2-aff1-1f6e80bed463}</Project>
       <Name>MyBlog.Biz</Name>
@@ -640,6 +636,10 @@
     <ProjectReference Include="..\MyBlog.IBiz\MyBlog.IBiz.csproj">
       <Project>{ac133e11-d70c-4507-87bc-80f40acdadc0}</Project>
       <Name>MyBlog.IBiz</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Tools\Tools.csproj">
+      <Project>{c50e6d66-5395-4359-9907-e77edc21bfc2}</Project>
+      <Name>Tools</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>

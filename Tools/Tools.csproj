@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{CE7AA2DD-57AA-48E2-AFF1-1F6E80BED463}</ProjectGuid>
+    <ProjectGuid>{C50E6D66-5395-4359-9907-E77EDC21BFC2}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>MyBlog.Biz</RootNamespace>
-    <AssemblyName>MyBlog.Biz</AssemblyName>
+    <RootNamespace>Tools</RootNamespace>
+    <AssemblyName>Tools</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -37,7 +37,11 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization.Formatters.Soap" />
+    <Reference Include="System.Web" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -45,28 +49,28 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CompanieBiz.cs" />
+    <Compile Include="CacheHelper.cs" />
+    <Compile Include="CookieHelper.cs" />
+    <Compile Include="CsvHelper.cs" />
+    <Compile Include="DateFormat.cs" />
+    <Compile Include="DEncrypt.cs" />
+    <Compile Include="DESEncrypt.cs" />
+    <Compile Include="DownLoadHelper.cs" />
+    <Compile Include="EcanConvertToCh.cs" />
+    <Compile Include="Encryptor.cs" />
+    <Compile Include="FileDown.cs" />
+    <Compile Include="FileUp.cs" />
+    <Compile Include="Functions.cs" />
+    <Compile Include="ImageClass.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="SalaryInfoBiz.cs" />
-    <Compile Include="UserInfoBiz.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\MyBlog.DAL\MyBlog.DAL.csproj">
-      <Project>{56d5fbdf-d663-4238-b665-f574a0e69c15}</Project>
-      <Name>MyBlog.DAL</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\MyBlog.Entity\MyBlog.Entity.csproj">
-      <Project>{d3e69ea2-b14e-43f4-b865-ce3b88929477}</Project>
-      <Name>MyBlog.Entity</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\MyBlog.IBiz\MyBlog.IBiz.csproj">
-      <Project>{ac133e11-d70c-4507-87bc-80f40acdadc0}</Project>
-      <Name>MyBlog.IBiz</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Tools\Tools.csproj">
-      <Project>{c50e6d66-5395-4359-9907-e77edc21bfc2}</Project>
-      <Name>Tools</Name>
-    </ProjectReference>
+    <Compile Include="Serialize.cs" />
+    <Compile Include="SHAEncrypt.cs" />
+    <Compile Include="SqlHelper.cs" />
+    <Compile Include="TimeHelper.cs" />
+    <Compile Include="VerifyCode.cs" />
+    <Compile Include="VideoConvert.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="myblog.pfx" />

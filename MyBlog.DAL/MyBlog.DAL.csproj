@@ -51,13 +51,13 @@
     <Compile Include="UserInfoDAL.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\Tools\Tools\Tools.csproj">
-      <Project>{34a05066-dab0-4c09-ba3c-e408b0a9f367}</Project>
-      <Name>Tools</Name>
-    </ProjectReference>
     <ProjectReference Include="..\MyBlog.Entity\MyBlog.Entity.csproj">
       <Project>{d3e69ea2-b14e-43f4-b865-ce3b88929477}</Project>
       <Name>MyBlog.Entity</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Tools\Tools.csproj">
+      <Project>{c50e6d66-5395-4359-9907-e77edc21bfc2}</Project>
+      <Name>Tools</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
