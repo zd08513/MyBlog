@@ -115,12 +115,18 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\InterfaceConfig.cs" />
+    <Compile Include="App_Start\MyBlogConfiguration.cs" />
     <Compile Include="App_Start\NinjectDependencyResolver.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\BaseController.cs" />
+    <Compile Include="Controllers\CompanyController.cs" />
+    <Compile Include="Controllers\ErrorController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
+    <Compile Include="Controllers\MobileController.cs" />
+    <Compile Include="Controllers\SalaryController.cs" />
     <Compile Include="Controllers\VerifyCodeController.cs" />
+    <Compile Include="Extensions\ListExtensions.cs" />
     <Compile Include="Extensions\UserInfoExtensions.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -577,6 +583,7 @@
     <Content Include="Content\syntaxhighlighter-2.1.382\styles\shThemeRDark.css" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
+    <Content Include="table.html" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -614,7 +621,6 @@
     <Content Include="BJUI\themes\fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="BJUI\themes\fonts\glyphicons-halflings-regular.woff" />
     <Content Include="myblog.pfx" />
-    <None Include="Project_Readme.html" />
     <Content Include="Views\Shared\_HeaderPage.cshtml" />
     <Content Include="Views\Shared\_FooterPage.cshtml" />
     <Content Include="Views\Shared\_NavPage.cshtml" />
@@ -641,6 +647,12 @@
       <Project>{c50e6d66-5395-4359-9907-e77edc21bfc2}</Project>
       <Name>Tools</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_Code\UIHelper.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Salary\Index.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

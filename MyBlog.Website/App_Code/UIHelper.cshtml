@@ -1,0 +1,174 @@
+﻿@using MyBlog.Entity;
+
+@helper PagerShow(CompanieSearchInfo searchInfo, string BaseUrl)
+{ 
+    <link href="~/Content/pager.css" rel="stylesheet" />
+    <div class="badoo">
+        @if (searchInfo.RowsCount == 0)
+        {
+            <span class="nodata">没有数据</span>
+        }
+        else
+        {
+            @UIHelper.GetPagerList(searchInfo.PageIndex, searchInfo.PageSize, 
+                searchInfo.RowsCount, BaseUrl, searchInfo.Name,searchInfo.UserToState);
+        }
+    </div>
+}
+@helper BasePagerShow(BasePager pager, string BaseUrl)
+{
+    <link href="~/Content/pager.css" rel="stylesheet" />
+    <div class="badoo">
+        @if (pager.RowsCount == 0)
+        {
+            <span class="nodata">没有数据</span>
+        }
+        else
+        {
+            @UIHelper.GetPagerList(pager.PageIndex, pager.PageSize,
+                     pager.RowsCount, BaseUrl);
+        }
+    </div>
+}
+@using System.Text;
+@functions{
+    /// <summary>
+    /// 返回分页html
+    /// </summary>
+    /// <param name="PageIndex">当前页</param>
+    /// <param name="PageSize">每页大小</param>
+    /// <param name="RowsCount">总数</param>
+    /// <param name="BaseUrl">基类地址</param>
+    /// <param name="Name">基类地址</param>
+    /// <param name="UserToState">工作状态</param>
+    /// <param name="CreateDateFlag">日期排序</param>
+    /// <returns></returns>
+    public static IHtmlString GetPagerList(
+        int PageIndex, int PageSize, int RowsCount, string BaseUrl, string Name, int? UserToState)
+    {
+        if (UserToState == null)
+            UserToState = -1;
+        //计算总页数
+        int PageSum = RowsCount % PageSize == 0 ? RowsCount / PageSize : (RowsCount / PageSize + 1);
+        //首页
+        string first_url = string.Format("{0}?PageIndex={1}&Name={2}&UserToState={3}",
+            BaseUrl, 1, Name,UserToState);
+        //上一页
+        string up_url = string.Format("{0}?PageIndex={1}&Name={2}&UserToState={3}",
+            BaseUrl, (PageIndex - 1) == 0 ? PageIndex : (PageIndex - 1), Name,UserToState);
+        //下一页
+        string next_url = string.Format("{0}?PageIndex={1}&Name={2}&UserToState={3}",
+            BaseUrl, (PageIndex + 1) > PageSum ? PageIndex : (PageIndex + 1), Name,UserToState);
+        //尾页
+        string last_url = string.Format("{0}?PageIndex={1}&Name={2}&UserToState={3}",
+            BaseUrl, PageSum, Name,UserToState);
+        StringBuilder sb = new StringBuilder();
+        //判断首页、判断上一页
+        if (PageIndex > 1)
+        {
+            sb.Append("<a href=\"" + first_url + "\" class=\"a\">首页</a>");
+            sb.Append("<a href=\"" + up_url + "\" class=\"a\">上一页 </a>");
+        }
+        else
+        {
+            sb.Append("<a href='javascript:void(0)' class=\"b\">首页</a>");
+            sb.Append("<a href='javascript:void(0)' class=\"b\">上一页 </a>");
+        }
+        int this_first_page = (PageIndex-1) / 10 * 10 + 1;
+        int this_end_page = (PageIndex-1) / 10 * 10 + 10;
+        if (this_end_page > PageSum)
+            this_end_page = PageSum;
+        for (int i = this_first_page; i <= this_end_page; i++)
+        {
+            if (i == PageIndex)
+                sb.Append("<span class=\"current\">" + i + "</span>");
+            else
+                sb.Append("<a href=\"" +
+                    string.Format("{0}?PageIndex={1}&Name={2}&UserToState={3}",
+                    BaseUrl, i, Name,UserToState) + "\" class=\"a\">" + i + "</a>");
+        }
+        if (PageIndex < PageSum)
+        {
+            sb.Append("<a href=\"" + next_url + "\" class=\"a\">下一页 </a>");
+            sb.Append("<a href=\"" + last_url + "\" class=\"a\">尾页</a>");
+        }
+        else
+        {
+            sb.Append("<a href='javascript:void(0)' class=\"b\">下一页</a>");
+            sb.Append("<a href='javascript:void(0)' class=\"b\">尾页 </a>");
+        }
+        sb.AppendFormat("<span>共{0}条数据</span>", RowsCount);
+        first_url = null;
+        up_url = null;
+        next_url = null;
+        last_url = null;
+        return new HtmlString(sb.ToString());
+    }
+    /// <summary>
+    /// 基本分页
+    /// </summary>
+    /// <param name="PageIndex"></param>
+    /// <param name="PageSize"></param>
+    /// <param name="RowsCount"></param>
+    /// <param name="BaseUrl"></param>
+    /// <returns></returns>
+    public static IHtmlString GetPagerList(
+        int PageIndex, int PageSize, int RowsCount, string BaseUrl)
+    {
+        //计算总页数
+        int PageSum = RowsCount % PageSize == 0 ? RowsCount / PageSize : (RowsCount / PageSize + 1);
+        //首页
+        string first_url = string.Format("{0}?PageIndex={1}",
+            BaseUrl, 1);
+        //上一页
+        string up_url = string.Format("{0}?PageIndex={1}",
+            BaseUrl, (PageIndex - 1) == 0 ? PageIndex : (PageIndex - 1));
+        //下一页
+        string next_url = string.Format("{0}?PageIndex={1}",
+            BaseUrl, (PageIndex + 1) > PageSum ? PageIndex : (PageIndex + 1));
+        //尾页
+        string last_url = string.Format("{0}?PageIndex={1}",
+            BaseUrl, PageSum);
+        StringBuilder sb = new StringBuilder();
+        //判断首页、判断上一页
+        if (PageIndex > 1)
+        {
+            sb.Append("<a href=\"" + first_url + "\" class=\"a\">首页</a>");
+            sb.Append("<a href=\"" + up_url + "\" class=\"a\">上一页 </a>");
+        }
+        else
+        {
+            sb.Append("<a href='javascript:void(0)' class=\"b\">首页</a>");
+            sb.Append("<a href='javascript:void(0)' class=\"b\">上一页 </a>");
+        }
+        int this_first_page = (PageIndex - 1) / 10 * 10 + 1;
+        int this_end_page = (PageIndex - 1) / 10 * 10 + 10;
+        if (this_end_page > PageSum)
+            this_end_page = PageSum;
+        for (int i = this_first_page; i <= this_end_page; i++)
+        {
+            if (i == PageIndex)
+                sb.Append("<span class=\"current\">" + i + "</span>");
+            else
+                sb.Append("<a href=\"" +
+                    string.Format("{0}?PageIndex={1}",
+                    BaseUrl, i) + "\" class=\"a\">" + i + "</a>");
+        }
+        if (PageIndex < PageSum)
+        {
+            sb.Append("<a href=\"" + next_url + "\" class=\"a\">下一页 </a>");
+            sb.Append("<a href=\"" + last_url + "\" class=\"a\">尾页</a>");
+        }
+        else
+        {
+            sb.Append("<a href='javascript:void(0)' class=\"b\">下一页</a>");
+            sb.Append("<a href='javascript:void(0)' class=\"b\">尾页 </a>");
+        }
+        sb.AppendFormat("<span>共{0}条数据</span>", RowsCount);
+        first_url = null;
+        up_url = null;
+        next_url = null;
+        last_url = null;
+        return new HtmlString(sb.ToString());
+    }
+}
