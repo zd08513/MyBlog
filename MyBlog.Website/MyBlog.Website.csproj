@@ -135,6 +135,8 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="BJUI\jq\jquery-1.7.2.min.js" />
+    <Content Include="BJUI\jq\jquery.cookie.js" />
     <Content Include="BJUI\js\bjui-ajax.js" />
     <Content Include="BJUI\js\bjui-ajaxtab.js" />
     <Content Include="BJUI\js\bjui-alertmsg.js" />
@@ -162,8 +164,6 @@
     <Content Include="BJUI\js\bjui-theme.js" />
     <Content Include="BJUI\js\bjui-upload.js" />
     <Content Include="BJUI\js\bjui-util.date.js" />
-    <Content Include="BJUI\jq\jquery-1.7.2.min.js" />
-    <Content Include="BJUI\jq\jquery.cookie.js" />
     <Content Include="BJUI\other\html5shiv.min.js" />
     <Content Include="BJUI\other\jquery.iframe-transport.js" />
     <Content Include="BJUI\other\respond.min.js" />
@@ -531,7 +531,6 @@
     <Content Include="BJUI\themes\purple\topbg.png" />
     <Content Include="BJUI\themes\purple\zTreeStandard.png" />
     <Content Include="Content\css\login\login.css" />
-    <Content Include="Content\home.png" />
     <Content Include="Content\images\001.jpg" />
     <Content Include="Content\images\002.jpg" />
     <Content Include="Content\images\003.jpg" />
@@ -565,6 +564,7 @@
     <Content Include="Content\js\init.js" />
     <Content Include="Content\js\login\login.js" />
     <Content Include="Content\js\navpage.js" />
+    <Content Include="Content\logo.png" />
     <Content Include="Content\sha256.js" />
     <Content Include="Content\syntaxhighlighter-2.1.382\scripts\brush.js" />
     <Content Include="Content\syntaxhighlighter-2.1.382\scripts\clipboard.swf" />
@@ -606,20 +606,6 @@
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="packages.config" />
-    <Content Include="BJUI\plugins\bootstrapSelect\bootstrap-select.css.map" />
-    <Content Include="BJUI\plugins\bootstrapSelect\bootstrap-select.js.map" />
-    <Content Include="BJUI\plugins\kindeditor_4.1.10\php\demo.php" />
-    <Content Include="BJUI\plugins\kindeditor_4.1.10\php\file_manager_json.php" />
-    <Content Include="BJUI\plugins\kindeditor_4.1.10\php\JSON.php" />
-    <Content Include="BJUI\plugins\kindeditor_4.1.10\php\upload_json.php" />
-    <Content Include="BJUI\themes\css\FA\fonts\fontawesome-webfont.eot" />
-    <Content Include="BJUI\themes\css\FA\fonts\fontawesome-webfont.ttf" />
-    <Content Include="BJUI\themes\css\FA\fonts\fontawesome-webfont.woff" />
-    <Content Include="BJUI\themes\css\FA\fonts\fontawesome-webfont.woff2" />
-    <Content Include="BJUI\themes\css\FA\fonts\FontAwesome.otf" />
-    <Content Include="BJUI\themes\fonts\glyphicons-halflings-regular.eot" />
-    <Content Include="BJUI\themes\fonts\glyphicons-halflings-regular.ttf" />
-    <Content Include="BJUI\themes\fonts\glyphicons-halflings-regular.woff" />
     <Content Include="myblog.pfx" />
     <Content Include="Views\Shared\_HeaderPage.cshtml" />
     <Content Include="Views\Shared\_FooterPage.cshtml" />
@@ -653,6 +639,22 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Salary\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="BJUI\plugins\bootstrapSelect\bootstrap-select.css.map" />
+    <Content Include="BJUI\plugins\bootstrapSelect\bootstrap-select.js.map" />
+    <Content Include="BJUI\plugins\kindeditor_4.1.10\php\demo.php" />
+    <Content Include="BJUI\plugins\kindeditor_4.1.10\php\file_manager_json.php" />
+    <Content Include="BJUI\plugins\kindeditor_4.1.10\php\JSON.php" />
+    <Content Include="BJUI\plugins\kindeditor_4.1.10\php\upload_json.php" />
+    <Content Include="BJUI\themes\css\FA\fonts\fontawesome-webfont.eot" />
+    <Content Include="BJUI\themes\css\FA\fonts\fontawesome-webfont.ttf" />
+    <Content Include="BJUI\themes\css\FA\fonts\fontawesome-webfont.woff" />
+    <Content Include="BJUI\themes\css\FA\fonts\fontawesome-webfont.woff2" />
+    <Content Include="BJUI\themes\css\FA\fonts\FontAwesome.otf" />
+    <Content Include="BJUI\themes\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="BJUI\themes\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="BJUI\themes\fonts\glyphicons-halflings-regular.woff" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
