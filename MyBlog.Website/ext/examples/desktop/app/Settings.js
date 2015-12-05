@@ -1,4 +1,4 @@
-/*!
+﻿/*!
  * Ext JS Library
  * Copyright(c) 2006-2014 Sencha Inc.
  * licensing@sencha.com
@@ -21,7 +21,7 @@ Ext.define('Desktop.Settings', {
     ],
 
     layout: 'anchor',
-    title: 'Change Settings',
+    title: '桌面背景设置',
     modal: true,
     width: 640,
     height: 480,
@@ -38,8 +38,8 @@ Ext.define('Desktop.Settings', {
         me.tree = me.createTree();
 
         me.buttons = [
-            { text: 'OK', handler: me.onOK, scope: me },
-            { text: 'Cancel', handler: me.close, scope: me }
+            { text: '确定', handler: me.onOK, scope: me },
+            { text: '取消', handler: me.close, scope: me }
         ];
 
         me.items = [
@@ -51,7 +51,7 @@ Ext.define('Desktop.Settings', {
                     me.tree,
                     {
                         xtype: 'panel',
-                        title: 'Preview',
+                        title: '',
                         region: 'center',
                         layout: 'fit',
                         items: [ me.preview ]
@@ -60,7 +60,8 @@ Ext.define('Desktop.Settings', {
             },
             {
                 xtype: 'checkbox',
-                boxLabel: 'Stretch to fit',
+                boxLabel: '拉伸',
+                margin:'0 0 0 30',
                 checked: me.stretch,
                 listeners: {
                     change: function (comp) {
@@ -81,7 +82,7 @@ Ext.define('Desktop.Settings', {
         }
 
         var tree = new Ext.tree.Panel({
-            title: 'Desktop Background',
+            title: '',
             rootVisible: false,
             lines: false,
             scrollable: true,

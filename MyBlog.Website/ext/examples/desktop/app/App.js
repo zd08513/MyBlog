@@ -1,4 +1,4 @@
-/*!
+﻿/*!
  * Ext JS Library
  * Copyright(c) 2006-2014 Sencha Inc.
  * licensing@sencha.com
@@ -23,7 +23,8 @@ Ext.define('Desktop.App', {
         'Desktop.BogusModule',
 
 //        'Desktop.Blockalanche',
-        'Desktop.Settings'
+        'Desktop.Settings',
+        'Desktop.AccountingManage'
     ],
 
     init: function() {
@@ -44,7 +45,8 @@ Ext.define('Desktop.App', {
             new Desktop.AccordionWindow(),
             new Desktop.Notepad(),
             new Desktop.BogusMenuModule(),
-            new Desktop.BogusModule()
+            new Desktop.BogusModule(),
+            new Desktop.AccountingManage()
         ];
     },
 
@@ -55,7 +57,7 @@ Ext.define('Desktop.App', {
             //cls: 'ux-desktop-black',
 
             contextMenuItems: [
-                { text: 'Change Settings', handler: me.onSettings, scope: me }
+                { text: '桌面背景', handler: me.onSettings, scope: me }
             ],
 
             shortcuts: Ext.create('Ext.data.Store', {
@@ -64,7 +66,8 @@ Ext.define('Desktop.App', {
                     { name: 'Grid Window', iconCls: 'grid-shortcut', module: 'grid-win' },
                     { name: 'Accordion Window', iconCls: 'accordion-shortcut', module: 'acc-win' },
                     { name: 'Notepad', iconCls: 'notepad-shortcut', module: 'notepad' },
-                    { name: 'System Status', iconCls: 'cpu-shortcut', module: 'systemstatus'}
+                    { name: 'System Status', iconCls: 'cpu-shortcut', module: 'systemstatus' },
+                    { name: '财务管理', iconCls: 'accounting_manage', module: 'accountingmanage' }
                 ]
             }),
 
@@ -78,21 +81,21 @@ Ext.define('Desktop.App', {
         var me = this, ret = me.callParent();
 
         return Ext.apply(ret, {
-            title: 'Don Griffin',
+            title: '系统管理员',
             iconCls: 'user',
             height: 300,
             toolConfig: {
                 width: 100,
                 items: [
                     {
-                        text:'Settings',
+                        text:'桌面背景',
                         iconCls:'settings',
                         handler: me.onSettings,
                         scope: me
                     },
                     '-',
                     {
-                        text:'Logout',
+                        text:'退出',
                         iconCls:'logout',
                         handler: me.onLogout,
                         scope: me
@@ -117,7 +120,7 @@ Ext.define('Desktop.App', {
     },
 
     onLogout: function () {
-        Ext.Msg.confirm('Logout', 'Are you sure you want to logout?');
+        Ext.Msg.confirm('提示', '确定要退出当前系统吗?');
     },
 
     onSettings: function () {

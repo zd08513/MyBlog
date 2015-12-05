@@ -1826,6 +1826,7 @@
     <Content Include="ext\build\examples\desktop\resources\Desktop-all.css" />
     <Content Include="ext\build\examples\desktop\resources\images\accordian.gif" />
     <Content Include="ext\build\examples\desktop\resources\images\accordionLarge.png" />
+    <Content Include="ext\build\examples\desktop\resources\images\accounting_manage.png" />
     <Content Include="ext\build\examples\desktop\resources\images\bogus.png" />
     <Content Include="ext\build\examples\desktop\resources\images\breadcrumb\default-arrow-open-rtl.png" />
     <Content Include="ext\build\examples\desktop\resources\images\breadcrumb\default-arrow-open.png" />
@@ -19402,6 +19403,7 @@
     <Content Include="ext\examples\desktop\.sencha\test\test-impl.xml" />
     <Content Include="ext\examples\desktop\app.js" />
     <Content Include="ext\examples\desktop\app\AccordionWindow.js" />
+    <Content Include="ext\examples\desktop\app\AccountingManage.js" />
     <Content Include="ext\examples\desktop\app\App.js" />
     <Content Include="ext\examples\desktop\app\BogusMenuModule.js" />
     <Content Include="ext\examples\desktop\app\BogusModule.js" />

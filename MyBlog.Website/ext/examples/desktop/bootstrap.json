@@ -4218,6 +4218,11 @@
 		"requires": [823],
 		"uses": [],
 		"idx": 824
+	},{
+		"path": "ext/examples/desktop/app/AccountingManage.js",
+		"requires": [573, 755],
+		"uses": [228, 358, 569],
+		"idx": 800
 	}],
 	"classes": {
 		"Desktop.AccordionWindow": {
@@ -4270,8 +4275,13 @@
 			"alias": [],
 			"alternates": []
 		},
-		"Desktop.model.Wallpaper": {
-			"idx": 768,
+        "Desktop.model.Wallpaper": {
+            "idx": 768,
+            "alias": [ ],
+            "alternates": [ ]
+        },
+        "Desktop.AccountingManage": {
+			"idx": 800,
 			"alias": [],
 			"alternates": []
 		},
