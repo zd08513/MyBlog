@@ -11175,7 +11175,7 @@
     <Content Include="Views\Web.config" />
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
-    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Shared\_LayoutBUI.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -12463,8 +12463,24 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="ext\build\examples\desktop\app.json" />
-    <Content Include="ext\build\examples\desktop\cache.appcache" />
-    <Content Include="ext\build\examples\desktop\resources\Readme.md" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Salary\Create.cshtml" />
+    <Content Include="Views\Salary\Details.cshtml" />
+    <Content Include="Views\Salary\Edit.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Shared\_Layout.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Shared\_Header.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Company\Create.cshtml" />
+    <Content Include="Views\Company\Delete.cshtml" />
+    <Content Include="Views\Company\Details.cshtml" />
+    <Content Include="Views\Company\Edit.cshtml" />
+    <Content Include="Views\Company\Index.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

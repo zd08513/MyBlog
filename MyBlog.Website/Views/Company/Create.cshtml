@@ -1,0 +1,70 @@
+﻿@model MyBlog.Entity.Company
+
+@{
+    ViewBag.Title = "添加公司信息";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>添加</h2>
+
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>公司信息</legend>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Name)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Name)
+            @Html.ValidationMessageFor(model => model.Name)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Address)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Address)
+            @Html.ValidationMessageFor(model => model.Address)
+        </div>
+        <div class="editor-label">
+            @Html.LabelFor(model => model.WorkToDateString)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.WorkToDateString)
+            @Html.ValidationMessageFor(model => model.WorkToDateString)
+        </div>
+        <div class="editor-label">
+            @Html.LabelFor(model => model.WorkToDate)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.WorkToDate)
+            @Html.ValidationMessageFor(model => model.WorkToDate)
+        </div>
+        <div class="editor-label">
+            @Html.LabelFor(model => model.UserToState)
+        </div>
+        <div class="editor-field">
+            @Html.RadioButtonFor(model => model.UserToState, 0, new { @checked="checked"})<span>应聘过</span>
+            @Html.RadioButtonFor(model => model.UserToState, 1)<span>工作过</span>
+            @Html.RadioButtonFor(model => model.UserToState, 2)<span>工作中</span>
+            @Html.RadioButtonFor(model => model.UserToState, 3)<span>离职中</span>
+            @Html.RadioButtonFor(model => model.UserToState, 4)<span>未去应聘</span>
+            @Html.ValidationMessageFor(model => model.UserToState)
+        </div>
+
+        <p>
+            <input type="submit" value="添加" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("返回列表", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

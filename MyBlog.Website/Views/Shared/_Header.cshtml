@@ -1,0 +1,23 @@
+﻿@using Tools;
+
+<h1>
+    我的博客OA系统
+    <span></span>
+    @{
+        UserInfo userInfo = UserInfoExtensions.GetUserInfo();
+        if (userInfo == null) { 
+            @Html.ActionLink("登录", "login", "User", new { }, new { @class = "btn btn-primary" })
+            @Html.ActionLink("注册", "register", "User", new { }, new { @class = "btn btn-warning" })
+        }
+        else
+        {
+            <label>欢迎，@userInfo.UserName</label>
+            using (Html.BeginForm("loginout", "user", FormMethod.Post))
+            {
+                @Html.AntiForgeryToken()
+        
+                <input type="submit" value="注销" class="btn" />
+            }
+        }
+}
+</h1>

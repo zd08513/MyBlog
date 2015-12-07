@@ -1,0 +1,37 @@
+﻿@model MyBlog.Entity.SalaryInfo
+
+@{
+    ViewBag.Title = "员工详情";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>详情</h2>
+
+<fieldset>
+    <legend>员工详情</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Money)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Money)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.SendDate)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.SendDate)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.CreateTime)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.CreateTime)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("编辑", "Edit", new { id=Model.Id }) |
+    @Html.ActionLink("返回员工列表", "Index")
+</p>

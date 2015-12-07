@@ -1,0 +1,88 @@
+﻿@model MyBlog.Entity.Company
+
+@{
+    ViewBag.Title = "编辑公司信息";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>编辑</h2>
+
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>公司信息</legend>
+
+        @Html.HiddenFor(model => model.Id)
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Name)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Name)
+            @Html.ValidationMessageFor(model => model.Name)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Address)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Address)
+            @Html.ValidationMessageFor(model => model.Address)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.WorkToDateString)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.WorkToDateString)
+            @Html.ValidationMessageFor(model => model.WorkToDateString)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.WorkToDate)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.WorkToDate)
+            @Html.ValidationMessageFor(model => model.WorkToDate)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.UserToState)
+        </div>
+        <div class="editor-field checkUserToState">
+            @Html.RadioButtonFor(model => model.UserToState, 0, new { @id = "UserToState01", @selectChecked = Model.UserToState.GetHashCode() })<span>应聘过</span>
+            @Html.RadioButtonFor(model => model.UserToState, 1, new { @id = "UserToState02", @selectChecked = Model.UserToState.GetHashCode() })<span>工作过</span>
+            @Html.RadioButtonFor(model => model.UserToState, 2, new { @id = "UserToState03", @selectChecked = Model.UserToState.GetHashCode() })<span>工作中</span>
+            @Html.RadioButtonFor(model => model.UserToState, 3, new { @id = "UserToState04", @selectChecked = Model.UserToState.GetHashCode() })<span>离职中</span>
+            @Html.RadioButtonFor(model => model.UserToState, 4, new { @id = "UserToState05", @selectChecked = Model.UserToState.GetHashCode() })<span>未去应聘</span>
+            @Html.ValidationMessageFor(model => model.UserToState)
+        </div>
+
+        <p>
+            <input type="submit" value="保存" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("返回列表", "Index")
+</div>
+
+@section Scripts {
+
+    <script>
+        $(function () {
+            var radioBtns = $(".checkUserToState input");
+            console.log(radioBtns);
+            for (var i = 0,len=radioBtns.length; i < len; i++) {
+                var value = $(radioBtns[i]).attr("value");
+                var selectValue = $(radioBtns[i]).attr("selectChecked");
+                console.log(value + '---' + selectValue);
+                if (value == selectValue)
+                    $(radioBtns[i]).attr("checked", "checked");
+            }
+        });
+    </script>
+}

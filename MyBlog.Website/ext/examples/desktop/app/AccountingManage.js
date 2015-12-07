@@ -17,8 +17,8 @@
             win = desktop.createWindow({
                 id: 'accountingmanage',
                 title: '财务管理',
-                width: 600,
-                height: 400,
+                width: '80%',
+                height: '80%',
                 iconCls: 'accounting_manage_16',
                 animCollapse: false,
                 border: false,
@@ -27,7 +27,7 @@
                 layout: 'fit',
                 items: [
                     {
-                        html:'<iframe src="/login/login" width="100%" height="100%"></iframe>'
+                        html: '<iframe src="/salary/index" frameborder="0" width="100%" height="100%"></iframe>'
                     }
                 ]
             });

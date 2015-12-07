@@ -11,10 +11,9 @@ using MyBlog.IBiz;
 using MyBlog.Website.App_Start;
 using MyBlog.Entity;
 
-namespace MyBlogs.Website.Controllers
+namespace MyBlog.Website.Controllers
 {
-    [UserFilter]
-    public class SalaryController : Controller
+    public class SalaryController : BaseController
     {
         [Inject]
         public ISalaryInfoBiz biz { get; set; }

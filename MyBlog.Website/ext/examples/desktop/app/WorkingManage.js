@@ -17,8 +17,8 @@
             win = desktop.createWindow({
                 id: 'workingmanage',
                 title: '工作管理',
-                width: 600,
-                height: 400,
+                width: '80%',
+                height: '80%',
                 iconCls: 'working_manage_16',
                 animCollapse: false,
                 border: false,
@@ -27,7 +27,7 @@
                 layout: 'fit',
                 items: [
                     {
-                        html: '<iframe src="/login/login" width="100%" height="100%"></iframe>'
+                        html: '<iframe src="/company/index" frameborder="0" width="100%" height="100%"></iframe>'
                     }
                 ]
             });

@@ -1,0 +1,45 @@
+﻿@model MyBlog.Entity.SalaryInfo
+
+@{
+    ViewBag.Title = "添加工资信息";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>添加</h2>
+
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>添加工资信息</legend>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Money)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Money)
+            @Html.ValidationMessageFor(model => model.Money)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.SendDate)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.SendDate)
+            @Html.ValidationMessageFor(model => model.SendDate)
+        </div>
+
+        <p>
+            <input type="submit" value="添加" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("返回列表", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

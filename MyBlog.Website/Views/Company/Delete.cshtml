@@ -1,0 +1,32 @@
+﻿@model MyBlog.Entity.Company
+
+@{
+    ViewBag.Title = "公司信息";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>删除</h2>
+
+<h3>是否要删除当前数据?</h3>
+<fieldset>
+    <legend>公司信息</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Name)：@Html.DisplayFor(model => model.Name)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Address)：@Html.DisplayFor(model => model.Address)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.CreateDate)：@Html.DisplayFor(model => model.CreateDate)
+    </div>
+</fieldset>
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    <p>
+        <input type="submit" value="删除" /> |
+        @Html.ActionLink("返回列表", "Index")
+    </p>
+}

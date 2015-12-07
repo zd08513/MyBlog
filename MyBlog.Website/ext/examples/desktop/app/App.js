@@ -14,10 +14,7 @@ Ext.define('Desktop.App', {
         'Ext.ux.desktop.ShortcutModel',
 
         'Desktop.SystemStatus',
-        'Desktop.VideoWindow',
-        'Desktop.GridWindow',
         'Desktop.TabWindow',
-        'Desktop.AccordionWindow',
         'Desktop.BogusMenuModule',
         'Desktop.BogusModule',
 
@@ -37,12 +34,9 @@ Ext.define('Desktop.App', {
 
     getModules : function(){
         return [
-            new Desktop.VideoWindow(),
             //new Desktop.Blockalanche(),
             new Desktop.SystemStatus(),
-            new Desktop.GridWindow(),
             new Desktop.TabWindow(),
-            new Desktop.AccordionWindow(),
             new Desktop.BogusMenuModule(),
             new Desktop.BogusModule(),
             new ext.examples.desktop.app.AccountingManage(),
@@ -63,9 +57,6 @@ Ext.define('Desktop.App', {
             shortcuts: Ext.create('Ext.data.Store', {
                 model: 'Ext.ux.desktop.ShortcutModel',
                 data: [
-                    { name: 'Grid Window', iconCls: 'grid-shortcut', module: 'grid-win' },
-                    { name: 'Accordion Window', iconCls: 'accordion-shortcut', module: 'acc-win' },
-                    { name: 'System Status', iconCls: 'cpu-shortcut', module: 'systemstatus' },
                     { name: '财务管理', iconCls: 'accounting_manage', module: 'accountingmanage' },
                     { name: '工作应聘', iconCls: 'working_manage', module: 'workingmanage' }
                 ]
