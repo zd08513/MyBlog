@@ -18,13 +18,13 @@ Ext.define('Desktop.App', {
         'Desktop.GridWindow',
         'Desktop.TabWindow',
         'Desktop.AccordionWindow',
-        'Desktop.Notepad',
         'Desktop.BogusMenuModule',
         'Desktop.BogusModule',
 
 //        'Desktop.Blockalanche',
         'Desktop.Settings',
-        'Desktop.AccountingManage'
+        'ext.examples.desktop.app.AccountingManage',
+        'ext.examples.desktop.app.WorkingManage'
     ],
 
     init: function() {
@@ -43,10 +43,10 @@ Ext.define('Desktop.App', {
             new Desktop.GridWindow(),
             new Desktop.TabWindow(),
             new Desktop.AccordionWindow(),
-            new Desktop.Notepad(),
             new Desktop.BogusMenuModule(),
             new Desktop.BogusModule(),
-            new Desktop.AccountingManage()
+            new ext.examples.desktop.app.AccountingManage(),
+            new ext.examples.desktop.app.WorkingManage()
         ];
     },
 
@@ -65,9 +65,9 @@ Ext.define('Desktop.App', {
                 data: [
                     { name: 'Grid Window', iconCls: 'grid-shortcut', module: 'grid-win' },
                     { name: 'Accordion Window', iconCls: 'accordion-shortcut', module: 'acc-win' },
-                    { name: 'Notepad', iconCls: 'notepad-shortcut', module: 'notepad' },
                     { name: 'System Status', iconCls: 'cpu-shortcut', module: 'systemstatus' },
-                    { name: '财务管理', iconCls: 'accounting_manage', module: 'accountingmanage' }
+                    { name: '财务管理', iconCls: 'accounting_manage', module: 'accountingmanage' },
+                    { name: '工作应聘', iconCls: 'working_manage', module: 'workingmanage' }
                 ]
             }),
 

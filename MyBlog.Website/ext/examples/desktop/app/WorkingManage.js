@@ -1,12 +1,12 @@
-﻿Ext.define('ext.examples.desktop.app.AccountingManage', {
+﻿Ext.define('ext.examples.desktop.app.WorkingManage', {
     extend: 'Ext.ux.desktop.Module',
 
-    id: 'accountingmanage',
+    id: 'workingmanage',
 
     init: function () {
         this.launcher = {
-            text: '财务管理',
-            iconCls: 'accounting_manage_16'
+            text: '工作管理',
+            iconCls: 'working_manage_16'
         }
     },
 
@@ -15,11 +15,11 @@
         var win = desktop.getWindow('accountingmanage');
         if (!win) {
             win = desktop.createWindow({
-                id: 'accountingmanage',
-                title: '财务管理',
+                id: 'workingmanage',
+                title: '工作管理',
                 width: 600,
                 height: 400,
-                iconCls: 'accounting_manage_16',
+                iconCls: 'working_manage_16',
                 animCollapse: false,
                 border: false,
                 hideMode: 'offsets',
@@ -27,7 +27,7 @@
                 layout: 'fit',
                 items: [
                     {
-                        html:'<iframe src="/login/login" width="100%" height="100%"></iframe>'
+                        html: '<iframe src="/login/login" width="100%" height="100%"></iframe>'
                     }
                 ]
             });
