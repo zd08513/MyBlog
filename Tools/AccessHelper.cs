@@ -16,11 +16,11 @@ namespace Tools
     /// 数据访问基础类(基于OleDb) 
     /// 可以用户可以修改满足自己项目的需要。
     /// </summary>
-    public abstract class DbHelperOleDb
+    public abstract class AccessHelper
     {
         //数据库连接字符串(web.config来配置)，可以动态更改connectionString支持多数据库.    
-        public static readonly string connectionString = ConfigurationManager.AppSettings["LeaveMessageConnection"].ToString();
-        public DbHelperOleDb()
+        public static string connectionString;
+        public AccessHelper()
         {
         }
  
@@ -29,7 +29,7 @@ namespace Tools
         public static int GetMaxID(string FieldName, string TableName)
         {
             string strsql = "select max(" + FieldName + ")+1 from " + TableName;
-            object obj = DbHelperSQL.GetSingle(strsql);
+            object obj = GetSingle(strsql);
             if (obj == null)
             {
                 return 1;
@@ -41,7 +41,7 @@ namespace Tools
         }
         public static bool Exists(string strSql)
         {
-            object obj = DbHelperSQL.GetSingle(strSql);
+            object obj = GetSingle(strSql);
             int cmdresult;
             if ((Object.Equals(obj, null)) || (Object.Equals(obj, System.DBNull.Value)))
             {

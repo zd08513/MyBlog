@@ -8,26 +8,28 @@ using MyBlog.Entity;
 using System.Data;
 using Tools;
 using MyBlog.Entity.SearchInfo;
-using MyBlogs.DAL;
+using MyBlog.Factory;
+using MyBlog.IDAL;
 
 namespace MyBlog.Biz
 {
     public class SalaryInfoBiz : ISalaryInfoBiz
     {
+        private static ISalaryInfoDAL dal = DataBaseFactory.GetSalaryInfoFactory();
         public bool SalaryInfoSave(SalaryInfo info)
         {
             info.Id = Guid.NewGuid().ToString();
-            return SalaryInfoDAL.SalaryInfoSave(info);
+            return dal.SalaryInfoSave(info);
         }
 
         public bool SalaryInfoUpdate(SalaryInfo info)
         {
-            return SalaryInfoDAL.SalaryInfoUpdate(info);
+            return dal.SalaryInfoUpdate(info);
         }
 
         public IEnumerable<SalaryInfo> SalaryInfo(SalaryInfoSearchInfo searchInfo)
         {
-            DataTable dt = SalaryInfoDAL.SalaryInfo(searchInfo);
+            DataTable dt = dal.SalaryInfo(searchInfo);
             foreach (DataRow dr in dt.Rows)
             {
                 SalaryInfo info = new SalaryInfo
@@ -44,7 +46,7 @@ namespace MyBlog.Biz
 
         public SalaryInfo Details(string id)
         {
-            DataTable dt = SalaryInfoDAL.Details(id);
+            DataTable dt = dal.Details(id);
 
             SalaryInfo info = null;
             foreach (DataRow dr in dt.Rows)

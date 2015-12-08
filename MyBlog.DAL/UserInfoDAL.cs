@@ -1,4 +1,5 @@
 ﻿using MyBlog.Entity.Entity;
+using MyBlog.IDAL;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -9,12 +10,12 @@ using System.Text;
 using System.Threading.Tasks;
 using Tools;
 
-namespace MyBlogs.DAL
+namespace MyBlog.DAL
 {
     /// <summary>
     /// 实现用户数据接口
     /// </summary>
-    public class UserInfoDAL
+    public class UserInfoDAL : IUserInfoDAL
     {
         /// <summary>
         /// 用户登录
@@ -22,7 +23,7 @@ namespace MyBlogs.DAL
         /// <param name="username"></param>
         /// <param name="password"></param>
         /// <returns></returns>
-        public static UserInfo Login(string username, string password)
+        public UserInfo Login(string username, string password)
         {
             IList<SqlParameter> arrParameter = new List<SqlParameter>();
             arrParameter.Add(new SqlParameter { ParameterName = "@username", Value = username, DbType = DbType.String });
@@ -52,7 +53,7 @@ namespace MyBlogs.DAL
         /// </summary>
         /// <param name="userinfo"></param>
         /// <returns></returns>
-        public static bool Add(UserInfo userinfo)
+        public bool Add(UserInfo userinfo)
         {
             IList<SqlParameter> arrParameter = new List<SqlParameter>();
             arrParameter.Add(new SqlParameter { ParameterName = "@userid", Value = userinfo.UserId, DbType = DbType.String });

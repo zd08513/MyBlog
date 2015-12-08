@@ -1,5 +1,6 @@
 ﻿using MyBlog.Entity;
 using MyBlog.Entity.SearchInfo;
+using MyBlog.IDAL;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -9,14 +10,14 @@ using System.Text;
 using System.Threading.Tasks;
 using Tools;
 
-namespace MyBlogs.DAL
+namespace MyBlog.DAL
 {
     /// <summary>
     /// 工资数据类
     /// </summary>
-    public class SalaryInfoDAL
+    public class SalaryInfoDAL : ISalaryInfoDAL
     {
-        public static bool SalaryInfoSave(SalaryInfo info)
+        public bool SalaryInfoSave(SalaryInfo info)
         {
             string sql = "INSERT INTO SalaryInfo(id,money,send_date,createtime)VALUES(@id,@money,@send_date,@createtime)";
             IList<SqlParameter> arrParameter = new List<SqlParameter>();
@@ -27,7 +28,7 @@ namespace MyBlogs.DAL
             return SqlHelper.ExecteNonQuery(CommandType.Text, sql, arrParameter.ToArray()) > 0;
         }
 
-        public static bool SalaryInfoUpdate(SalaryInfo info)
+        public bool SalaryInfoUpdate(SalaryInfo info)
         {
             string sql = "UPDATE SalaryInfo SET money='@money',send_date='@send_date' WHERE id='@id'";
             IList<SqlParameter> arrParameter = new List<SqlParameter>();
@@ -38,7 +39,7 @@ namespace MyBlogs.DAL
             return SqlHelper.ExecteNonQuery(CommandType.Text, sql, arrParameter.ToArray()) > 0;
         }
 
-        public static DataTable SalaryInfo(SalaryInfoSearchInfo searchInfo)
+        public DataTable SalaryInfo(SalaryInfoSearchInfo searchInfo)
         {
             IList<SqlParameter> arrParameter = new List<SqlParameter>();
             arrParameter.Add(new SqlParameter { ParameterName = "@page_index", Value = searchInfo.PageIndex });
@@ -52,7 +53,7 @@ namespace MyBlogs.DAL
         }
 
 
-        public static DataTable Details(string id)
+        public DataTable Details(string id)
         {
             return SqlHelper.ExecuteDataSet(CommandType.Text, "SELECT * FROM SalaryInfo WHERE id=@id", new SqlParameter { ParameterName = "@id", Value = id, SqlDbType = SqlDbType.VarChar,Size=36 }).Tables[0];
         }

@@ -7,7 +7,8 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using MyBlog.DAL;
+using MyBlog.Factory;
+using MyBlog.IDAL;
 
 namespace MyBlog.Biz
 {
@@ -16,6 +17,7 @@ namespace MyBlog.Biz
     /// </summary>
     public class CompanieBiz : ICompanieBiz
     {
+        private static ICompanieDAL dal = DataBaseFactory.GetCompanieFactory();
         /// <summary>
         /// 查询应聘公司列表
         /// </summary>
@@ -23,7 +25,7 @@ namespace MyBlog.Biz
         /// <returns></returns>
         public IList<Company> CompanieQry(CompanieSearchInfo searchInfo)
         {
-            DataTable dtCompanieQry = CompanieDAL.CompanieQry(searchInfo);
+            DataTable dtCompanieQry = dal.CompanieQry(searchInfo);
 
             IList<Company> list = new List<Company>();
             foreach (DataRow dr in dtCompanieQry.Rows)
@@ -48,7 +50,7 @@ namespace MyBlog.Biz
         /// <returns></returns>
         public Company CompanieDetail(int Id)
         {
-            return CompanieDAL.CompanieDetail(Id);
+            return dal.CompanieDetail(Id);
         }
 
         /// <summary>
@@ -58,7 +60,7 @@ namespace MyBlog.Biz
         /// <returns></returns>
         public bool CompanieSave(Company comany)
         {
-            return CompanieDAL.CompanieSave(comany);
+            return dal.CompanieSave(comany);
         }
 
         /// <summary>
@@ -68,7 +70,7 @@ namespace MyBlog.Biz
         /// <returns></returns>
         public bool CompanieDelete(int Id)
         {
-            return CompanieDAL.CompanieDelete(Id);
+            return dal.CompanieDelete(Id);
         }
 
         /// <summary>
@@ -78,7 +80,7 @@ namespace MyBlog.Biz
         /// <returns></returns>
         public bool CompanieUpdate(Company company)
         {
-            return CompanieDAL.CompanieUpdate(company);
+            return dal.CompanieUpdate(company);
         }
     }
 }

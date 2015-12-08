@@ -7,20 +7,21 @@ using System.Data;
 using System.Data.SqlClient;
 using Tools;
 using MyBlog.Entity;
+using MyBlog.IDAL;
 
 namespace MyBlog.DAL
 {
     /// <summary>
     /// 应聘公司实现数据层接口
     /// </summary>
-    public class CompanieDAL
+    public class CompanieDAL : ICompanieDAL
     {
         /// <summary>
         /// 查询应聘公司列表
         /// </summary>
         /// <param name="searchInfo"></param>
         /// <returns></returns>
-        public static DataTable CompanieQry(CompanieSearchInfo searchInfo)
+        public DataTable CompanieQry(CompanieSearchInfo searchInfo)
         {
             IList<SqlParameter> arrParameter = new List<SqlParameter>();
 
@@ -43,7 +44,7 @@ namespace MyBlog.DAL
         /// </summary>
         /// <param name="Id"></param>
         /// <returns></returns>
-        public static Company CompanieDetail(int Id)
+        public Company CompanieDetail(int Id)
         {
             IList<SqlParameter> arrParameter=new List<SqlParameter>();
             arrParameter.Add(new SqlParameter{ParameterName="Id",SqlValue=Id,SqlDbType=SqlDbType.Int});
@@ -68,7 +69,7 @@ namespace MyBlog.DAL
         /// </summary>
         /// <param name="comany"></param>
         /// <returns></returns>
-        public static bool CompanieSave(Company company)
+        public bool CompanieSave(Company company)
         {
             IList<SqlParameter> arrParameter = new List<SqlParameter>();
             arrParameter.Add(new SqlParameter{
@@ -108,7 +109,7 @@ namespace MyBlog.DAL
         /// </summary>
         /// <param name="company"></param>
         /// <returns></returns>
-        public static bool CompanieUpdate(Company company)
+        public bool CompanieUpdate(Company company)
         {
             IList<SqlParameter> arrParameter = new List<SqlParameter>();
             arrParameter.Add(new SqlParameter
@@ -154,7 +155,7 @@ namespace MyBlog.DAL
         /// </summary>
         /// <param name="Id"></param>
         /// <returns></returns>
-        public static bool CompanieDelete(int Id)
+        public bool CompanieDelete(int Id)
         {
             IList<SqlParameter> arrParameter = new List<SqlParameter>();
             arrParameter.Add(new SqlParameter

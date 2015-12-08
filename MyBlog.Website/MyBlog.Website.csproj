@@ -11205,6 +11205,10 @@
       <Project>{d3e69ea2-b14e-43f4-b865-ce3b88929477}</Project>
       <Name>MyBlog.Entity</Name>
     </ProjectReference>
+    <ProjectReference Include="..\MyBlog.Factory\MyBlog.Factory.csproj">
+      <Project>{0d6f530f-0e81-4f5b-a4ca-da217c8f2a6d}</Project>
+      <Name>MyBlog.Factory</Name>
+    </ProjectReference>
     <ProjectReference Include="..\MyBlog.IBiz\MyBlog.IBiz.csproj">
       <Project>{ac133e11-d70c-4507-87bc-80f40acdadc0}</Project>
       <Name>MyBlog.IBiz</Name>

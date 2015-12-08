@@ -1,7 +1,8 @@
 ﻿using MyBlog.Entity;
 using MyBlog.Entity.Entity;
+using MyBlog.Factory;
 using MyBlog.IBiz;
-using MyBlogs.DAL;
+using MyBlog.IDAL;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,6 +17,7 @@ namespace MyBlog.Biz
     /// </summary>
     public class UserInfoBiz : IUserInfoBiz
     {
+        private static IUserInfoDAL dal = DataBaseFactory.GetUserInfoFactory();
         /// <summary>
         /// 登录
         /// </summary>
@@ -26,7 +28,7 @@ namespace MyBlog.Biz
         {
             //加密
             password = SHAEncrypt.SHA128(password);
-            return UserInfoDAL.Login(username, password);
+            return dal.Login(username, password);
         }
 
         /// <summary>
@@ -40,7 +42,7 @@ namespace MyBlog.Biz
             //加密
             userinfo.UserPassword = SHAEncrypt.SHA128(userinfo.UserPassword);
             userinfo.CreateTime = DateTime.Now;
-            return UserInfoDAL.Add(userinfo);
+            return dal.Add(userinfo);
         }
     }
 }

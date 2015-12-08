@@ -17,3 +17,7 @@ MyBlog.IDAL/bin
 MyBlog.IDAL/obj
 Tools/obj
 Tools/bin
+MyBlog.Access.DAL/bin
+MyBlog.Access.DAL/obj
+MyBlog.Factory/bin
+MyBlog.Factory/obj

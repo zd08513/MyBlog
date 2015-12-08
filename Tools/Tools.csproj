@@ -53,6 +53,7 @@
     <Compile Include="CookieHelper.cs" />
     <Compile Include="CsvHelper.cs" />
     <Compile Include="DateFormat.cs" />
+    <Compile Include="AccessHelper.cs" />
     <Compile Include="DEncrypt.cs" />
     <Compile Include="DESEncrypt.cs" />
     <Compile Include="DownLoadHelper.cs" />

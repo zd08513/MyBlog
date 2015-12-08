@@ -55,6 +55,10 @@
       <Project>{d3e69ea2-b14e-43f4-b865-ce3b88929477}</Project>
       <Name>MyBlog.Entity</Name>
     </ProjectReference>
+    <ProjectReference Include="..\MyBlog.IDAL\MyBlog.IDAL.csproj">
+      <Project>{3c94b16c-f70e-48f8-bfa9-38bbc957d6cd}</Project>
+      <Name>MyBlog.IDAL</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Tools\Tools.csproj">
       <Project>{c50e6d66-5395-4359-9907-e77edc21bfc2}</Project>
       <Name>Tools</Name>
