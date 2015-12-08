@@ -135,6 +135,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Data\MyBlogs.mdb" />
     <Content Include="BJUI\jq\jquery-1.7.2.min.js" />
     <Content Include="BJUI\jq\jquery.cookie.js" />
     <Content Include="BJUI\js\bjui-ajax.js" />
@@ -11178,7 +11179,6 @@
     <Content Include="Views\Shared\_LayoutBUI.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="App_Data\" />
     <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>

@@ -13,3 +13,7 @@ MyBlog.Models/bin
 *.ppk
 *.pfx
 *.key
+MyBlog.IDAL/bin
+MyBlog.IDAL/obj
+Tools/obj
+Tools/bin
